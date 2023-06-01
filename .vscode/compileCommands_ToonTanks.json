@@ -1,41 +1,57 @@
 [
 	{
-		"file": "C:\\Users\\User\\Documents\\UnrealProjects\\CryptRaider\\ToonTanks\\Source\\ToonTanks\\ToonTanks.Build.cs",
+		"file": "C:\\Users\\User\\Documents\\UnrealProjects\\ToonTanks\\Source\\ToonTanks\\Private\\BasePawn.cpp",
 		"arguments": [
 			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe",
-			"@C:\\Users\\User\\Documents\\UnrealProjects\\CryptRaider\\ToonTanks\\.vscode\\compileCommands_ToonTanks\\ToonTanks.253.rsp"
+			"@C:\\Users\\User\\Documents\\UnrealProjects\\ToonTanks\\.vscode\\compileCommands_ToonTanks\\ToonTanks.253.rsp"
 		],
 		"directory": "C:\\Program Files (x86)\\Epic Games\\UE_5.1\\Engine\\Source"
 	},
 	{
-		"file": "C:\\Users\\User\\Documents\\UnrealProjects\\CryptRaider\\ToonTanks\\Source\\ToonTanks\\ToonTanks.cpp",
+		"file": "C:\\Users\\User\\Documents\\UnrealProjects\\ToonTanks\\Source\\ToonTanks\\Public\\BasePawn.h",
 		"arguments": [
 			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe",
-			"@C:\\Users\\User\\Documents\\UnrealProjects\\CryptRaider\\ToonTanks\\.vscode\\compileCommands_ToonTanks\\ToonTanks.253.rsp"
+			"@C:\\Users\\User\\Documents\\UnrealProjects\\ToonTanks\\.vscode\\compileCommands_ToonTanks\\ToonTanks.253.rsp"
 		],
 		"directory": "C:\\Program Files (x86)\\Epic Games\\UE_5.1\\Engine\\Source"
 	},
 	{
-		"file": "C:\\Users\\User\\Documents\\UnrealProjects\\CryptRaider\\ToonTanks\\Source\\ToonTanks\\ToonTanks.h",
+		"file": "C:\\Users\\User\\Documents\\UnrealProjects\\ToonTanks\\Source\\ToonTanks\\ToonTanks.Build.cs",
 		"arguments": [
 			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe",
-			"@C:\\Users\\User\\Documents\\UnrealProjects\\CryptRaider\\ToonTanks\\.vscode\\compileCommands_ToonTanks\\ToonTanks.253.rsp"
+			"@C:\\Users\\User\\Documents\\UnrealProjects\\ToonTanks\\.vscode\\compileCommands_ToonTanks\\ToonTanks.253.rsp"
 		],
 		"directory": "C:\\Program Files (x86)\\Epic Games\\UE_5.1\\Engine\\Source"
 	},
 	{
-		"file": "C:\\Users\\User\\Documents\\UnrealProjects\\CryptRaider\\ToonTanks\\Source\\ToonTanks\\ToonTanksGameModeBase.cpp",
+		"file": "C:\\Users\\User\\Documents\\UnrealProjects\\ToonTanks\\Source\\ToonTanks\\ToonTanks.cpp",
 		"arguments": [
 			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe",
-			"@C:\\Users\\User\\Documents\\UnrealProjects\\CryptRaider\\ToonTanks\\.vscode\\compileCommands_ToonTanks\\ToonTanks.253.rsp"
+			"@C:\\Users\\User\\Documents\\UnrealProjects\\ToonTanks\\.vscode\\compileCommands_ToonTanks\\ToonTanks.253.rsp"
 		],
 		"directory": "C:\\Program Files (x86)\\Epic Games\\UE_5.1\\Engine\\Source"
 	},
 	{
-		"file": "C:\\Users\\User\\Documents\\UnrealProjects\\CryptRaider\\ToonTanks\\Source\\ToonTanks\\ToonTanksGameModeBase.h",
+		"file": "C:\\Users\\User\\Documents\\UnrealProjects\\ToonTanks\\Source\\ToonTanks\\ToonTanks.h",
 		"arguments": [
 			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe",
-			"@C:\\Users\\User\\Documents\\UnrealProjects\\CryptRaider\\ToonTanks\\.vscode\\compileCommands_ToonTanks\\ToonTanks.253.rsp"
+			"@C:\\Users\\User\\Documents\\UnrealProjects\\ToonTanks\\.vscode\\compileCommands_ToonTanks\\ToonTanks.253.rsp"
+		],
+		"directory": "C:\\Program Files (x86)\\Epic Games\\UE_5.1\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\User\\Documents\\UnrealProjects\\ToonTanks\\Source\\ToonTanks\\ToonTanksGameModeBase.cpp",
+		"arguments": [
+			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe",
+			"@C:\\Users\\User\\Documents\\UnrealProjects\\ToonTanks\\.vscode\\compileCommands_ToonTanks\\ToonTanks.253.rsp"
+		],
+		"directory": "C:\\Program Files (x86)\\Epic Games\\UE_5.1\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\User\\Documents\\UnrealProjects\\ToonTanks\\Source\\ToonTanks\\ToonTanksGameModeBase.h",
+		"arguments": [
+			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe",
+			"@C:\\Users\\User\\Documents\\UnrealProjects\\ToonTanks\\.vscode\\compileCommands_ToonTanks\\ToonTanks.253.rsp"
 		],
 		"directory": "C:\\Program Files (x86)\\Epic Games\\UE_5.1\\Engine\\Source"
 	}
