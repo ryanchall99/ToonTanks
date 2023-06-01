@@ -19,7 +19,21 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
+private:
+	UPROPERTY()
+		class UCapsuleComponent* CapsuleComp; // Forward Declaration (Can't Inherit Without Header File Included)
+
+	UPROPERTY()
+		UStaticMeshComponent* BaseMesh; // Forward Declaration Not Needed as class inherits from APawn
+
+	UPROPERTY()
+		UStaticMeshComponent* TurretMesh;
+
+	UPROPERTY()
+		USceneComponent* ProjectileSpawnPoint;
+
+
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
