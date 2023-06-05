@@ -7,6 +7,7 @@
 #include "EnhancedInputSubsystems.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
+#include "Kismet/GameplayStatics.h"
 
 
 ATank::ATank()
@@ -47,7 +48,26 @@ void ATank::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
     if (UEnhancedInputComponent* EnhancedInputComponent = CastChecked<UEnhancedInputComponent>(PlayerInputComponent))
     {
-
+        EnhancedInputComponent->BindAction(InputMoveForward, ETriggerEvent::Triggered, this, &ATank::MoveForward);
+        EnhancedInputComponent->BindAction(InputRotate, ETriggerEvent::Triggered, this, &ATank::Rotate);
     }
 
+}
+
+void ATank::MoveForward(const FInputActionValue& Value)
+{
+    float MoveValue = Value.Get<float>();
+    FVector DeltaLocation = FVector::ZeroVector;
+
+    DeltaLocation.X += MoveValue * Speed * UGameplayStatics::GetWorldDeltaSeconds(this);
+    AddActorLocalOffset(DeltaLocation, true);
+}
+
+void ATank::Rotate(const FInputActionValue& Value)
+{
+    float RotateValue = Value.Get<float>();
+    FRotator DeltaRotation = FRotator::ZeroRotator;
+
+    DeltaRotation.Yaw += RotateValue * TurnRate * UGameplayStatics::GetWorldDeltaSeconds(this);
+    AddActorLocalRotation(DeltaRotation, true);
 }

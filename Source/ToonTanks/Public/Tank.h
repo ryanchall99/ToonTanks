@@ -18,6 +18,11 @@ class TOONTANKS_API ATank : public ABasePawn
 public:
 	ATank();
 
+	UPROPERTY(EditAnywhere, Category = "Movement")
+		float Speed = 200.f;
+	UPROPERTY(EditAnywhere, Category = "Movement")
+		float TurnRate = 100.f;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -35,12 +40,16 @@ private:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Enhanced Input", meta = (AllowPrivateAccess = "true"))
 		class UInputAction* InputMoveForward;
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Enhanced Input", meta = (AllowPrivateAccess = "true"))
-		class UInputAction* TurnInput;
+		class UInputAction* InputRotate;
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Enhanced Input", meta = (AllowPrivateAccess = "true"))
-		class UInputAction* RotateTurretInput;
+		class UInputAction* InputRotateTurret;
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Enhanced Input", meta = (AllowPrivateAccess = "true"))
-		class UInputAction* FireInput;
+		class UInputAction* InputFire;
 
+
+protected:
+	void MoveForward(const FInputActionValue& Value);
+	void Rotate(const FInputActionValue& Value);
 
 public:
 	virtual void Tick(float DeltaTime) override;
