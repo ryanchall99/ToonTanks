@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
+#include "InputActionValue.h"
 #include "BasePawn.generated.h"
 
 UCLASS()
@@ -20,6 +21,7 @@ protected:
 	virtual void BeginPlay() override;
 
 	void RotateTurret(FVector LootAtTarget);
+	void Fire();
 
 private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))

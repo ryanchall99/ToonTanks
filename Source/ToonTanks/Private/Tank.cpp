@@ -62,6 +62,7 @@ void ATank::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
     {
         EnhancedInputComponent->BindAction(InputMoveForward, ETriggerEvent::Triggered, this, &ATank::MoveForward);
         EnhancedInputComponent->BindAction(InputRotate, ETriggerEvent::Triggered, this, &ATank::Rotate);
+        EnhancedInputComponent->BindAction(InputFire, ETriggerEvent::Started, this, &ATank::Fire);
     }
 
 }
