@@ -23,6 +23,8 @@ void ATank::BeginPlay()
 {
     Super::BeginPlay();
 
+    PlayerControllerRef = Cast<APlayerController>(GetController());
+
     // Add Input Mapping Context
     if (APlayerController* PlayerController = Cast<APlayerController>(Controller))
     {
@@ -31,7 +33,6 @@ void ATank::BeginPlay()
             SubSystem->AddMappingContext(MappingContext, 0);
         }
     }
-
 }
 
 // Called every frame
@@ -39,6 +40,17 @@ void ATank::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
 
+    if (PlayerControllerRef)
+    {
+        FHitResult HitResult;
+        PlayerControllerRef->GetHitResultUnderCursor(
+            ECollisionChannel::ECC_Visibility,
+            false,
+            HitResult);
+
+        RotateTurret(HitResult.ImpactPoint);
+
+    }
 }
 
 // Called to bind functionality to input
