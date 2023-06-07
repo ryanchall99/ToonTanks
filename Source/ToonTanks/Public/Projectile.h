@@ -22,6 +22,8 @@ protected:
 private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
 		UStaticMeshComponent* BaseMesh;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
+		class UProjectileMovementComponent* ProjectileMovementComponent;
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
