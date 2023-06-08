@@ -5,6 +5,7 @@
 #include "Components/CapsuleComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "Projectile.h"
+#include "HealthComponent.h"
 
 // Sets default values
 ABasePawn::ABasePawn()
@@ -23,6 +24,8 @@ ABasePawn::ABasePawn()
 
 	ProjectileSpawnPoint = CreateDefaultSubobject<USceneComponent>("Projectile Spawn Point"); // Creates Scene Component Named "Projectile Spawn Point"
 	ProjectileSpawnPoint->SetupAttachment(TurretMesh); // Attaches the Projectile Spawn Point to turret mesh
+
+	HealthComponent = CreateDefaultSubobject<UHealthComponent>("Health");
 }
 
 // Called when the game starts or when spawned

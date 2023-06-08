@@ -24,6 +24,10 @@ private:
 		UStaticMeshComponent* BaseMesh;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
 		class UProjectileMovementComponent* ProjectileMovementComponent;
+
+	UFUNCTION()
+		void OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
+
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
