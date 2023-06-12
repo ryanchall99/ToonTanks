@@ -26,7 +26,7 @@ private:
 	float Health = 0.f; // Current Health.
 
 	UFUNCTION()
-	void DamageTaken(AActor* DamagedActor, float Damage, const UDamageType* DamageType, AController* Instigator, AActor* DamageCauser); // Actor Damaged / Damage Amount / Damage Type / Controller Instigating Damage / Actor Causing Damage
+		void DamageTaken(AActor* DamagedActor, float Damage, const UDamageType* DamageType, AController* Instigator, AActor* DamageCauser); // Actor Damaged / Damage Amount / Damage Type / Controller Instigating Damage / Actor Causing Damage
 
 public:
 	// Called every frame
