@@ -40,6 +40,14 @@
 		"directory": "C:\\Program Files (x86)\\Epic Games\\UE_5.1\\Engine\\Source"
 	},
 	{
+		"file": "C:\\Users\\User\\Documents\\UnrealProjects\\ToonTanks\\Source\\ToonTanks\\Private\\ToonTanksGameMode.cpp",
+		"arguments": [
+			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe",
+			"@C:\\Users\\User\\Documents\\UnrealProjects\\ToonTanks\\.vscode\\compileCommands_ToonTanks\\ToonTanks.253.rsp"
+		],
+		"directory": "C:\\Program Files (x86)\\Epic Games\\UE_5.1\\Engine\\Source"
+	},
+	{
 		"file": "C:\\Users\\User\\Documents\\UnrealProjects\\ToonTanks\\Source\\ToonTanks\\Private\\Tower.cpp",
 		"arguments": [
 			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe",
@@ -81,6 +89,14 @@
 	},
 	{
 		"file": "C:\\Users\\User\\Documents\\UnrealProjects\\ToonTanks\\Source\\ToonTanks\\Public\\Test.h",
+		"arguments": [
+			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe",
+			"@C:\\Users\\User\\Documents\\UnrealProjects\\ToonTanks\\.vscode\\compileCommands_ToonTanks\\ToonTanks.253.rsp"
+		],
+		"directory": "C:\\Program Files (x86)\\Epic Games\\UE_5.1\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\User\\Documents\\UnrealProjects\\ToonTanks\\Source\\ToonTanks\\Public\\ToonTanksGameMode.h",
 		"arguments": [
 			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe",
 			"@C:\\Users\\User\\Documents\\UnrealProjects\\ToonTanks\\.vscode\\compileCommands_ToonTanks\\ToonTanks.253.rsp"
