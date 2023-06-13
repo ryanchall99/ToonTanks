@@ -12,9 +12,11 @@
 
 ATank::ATank()
 {
+    // SPRING ARM SETUP
     SpringArm = CreateDefaultSubobject<USpringArmComponent>("Spring Arm");
     SpringArm->SetupAttachment(RootComponent);
 
+    // CAMERA SETUP
     Camera = CreateDefaultSubobject<UCameraComponent>("Camera");
     Camera->SetupAttachment(SpringArm);
 }
@@ -23,7 +25,7 @@ void ATank::BeginPlay()
 {
     Super::BeginPlay();
 
-    PlayerControllerRef = Cast<APlayerController>(GetController());
+    TankPlayerController = Cast<APlayerController>(GetController());
 
     // Add Input Mapping Context
     if (APlayerController* PlayerController = Cast<APlayerController>(Controller))
@@ -40,17 +42,22 @@ void ATank::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
 
-    if (PlayerControllerRef)
+    if (TankPlayerController) // If PlayerControllerRef not null...
     {
         FHitResult HitResult;
-        PlayerControllerRef->GetHitResultUnderCursor(
+        TankPlayerController->GetHitResultUnderCursor(
             ECollisionChannel::ECC_Visibility,
             false,
-            HitResult);
+            HitResult); // Get the hit result of the cursor
 
-        RotateTurret(HitResult.ImpactPoint);
-
+        RotateTurret(HitResult.ImpactPoint); // Rotate the turret based on the hit results impact point.
     }
+}
+
+void ATank::HandleDestruction()
+{
+    Super::HandleDestruction();
+    Destroy();
 }
 
 // Called to bind functionality to input
@@ -69,18 +76,18 @@ void ATank::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 void ATank::MoveForward(const FInputActionValue& Value)
 {
-    float MoveValue = Value.Get<float>();
+    float MoveValue = Value.Get<float>(); // Getting float value (1 / -1)
     FVector DeltaLocation = FVector::ZeroVector;
 
-    DeltaLocation.X += MoveValue * Speed * UGameplayStatics::GetWorldDeltaSeconds(this);
-    AddActorLocalOffset(DeltaLocation, true);
+    DeltaLocation.X += MoveValue * Speed * UGameplayStatics::GetWorldDeltaSeconds(this); // Movement in X direction (Backwards / Forwards)
+    AddActorLocalOffset(DeltaLocation, true); // Setting the local offset of actor based on this new FVector
 }
 
 void ATank::Rotate(const FInputActionValue& Value)
 {
-    float RotateValue = Value.Get<float>();
+    float RotateValue = Value.Get<float>(); // Getting float value (1 / -1)
     FRotator DeltaRotation = FRotator::ZeroRotator;
 
-    DeltaRotation.Yaw += RotateValue * TurnRate * UGameplayStatics::GetWorldDeltaSeconds(this);
-    AddActorLocalRotation(DeltaRotation, true);
+    DeltaRotation.Yaw += RotateValue * TurnRate * UGameplayStatics::GetWorldDeltaSeconds(this); // Movement in YAW
+    AddActorLocalRotation(DeltaRotation, true); // Setting the local rotation of actor based on this new FRotator
 }

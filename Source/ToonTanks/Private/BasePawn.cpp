@@ -28,6 +28,12 @@ ABasePawn::ABasePawn()
 	HealthComponent = CreateDefaultSubobject<UHealthComponent>("Health");
 }
 
+void ABasePawn::HandleDestruction()
+{
+	// TODO: 
+	// Visual / Sound Effects
+}
+
 // Called when the game starts or when spawned
 void ABasePawn::BeginPlay()
 {
@@ -39,15 +45,15 @@ void ABasePawn::RotateTurret(FVector LookAtTarget)
 {
 	if (LookAtTarget == FVector::ZeroVector) return;
 
-	FVector ToTarget = LookAtTarget - TurretMesh->GetComponentLocation();
-	FRotator LookAtRotation = FRotator(0.f, ToTarget.Rotation().Yaw, 0.f);
+	FVector ToTarget = LookAtTarget - TurretMesh->GetComponentLocation(); // Vector towards target
+	FRotator LookAtRotation = FRotator(0.f, ToTarget.Rotation().Yaw, 0.f); // Rotation of ToTarget (Yaw Only)
 	TurretMesh->SetWorldRotation(
 		FMath::RInterpTo(
 			TurretMesh->GetComponentRotation(),
 			LookAtRotation,
 			UGameplayStatics::GetWorldDeltaSeconds(this),
 			10.f)
-	);
+	); // Setting the mesh rotation, interpolating from current rotation to new rotation
 }
 
 // Called every frame
@@ -59,13 +65,13 @@ void ABasePawn::Tick(float DeltaTime)
 
 void ABasePawn::Fire()
 {
-	FVector Location = ProjectileSpawnPoint->GetComponentLocation();
-	FRotator Rotation = ProjectileSpawnPoint->GetComponentRotation();
+	FVector Location = ProjectileSpawnPoint->GetComponentLocation(); // Location of Projectile Spawn Point
+	FRotator Rotation = ProjectileSpawnPoint->GetComponentRotation(); // Rotation of Projectile Spawn Point
 	auto Projectile = GetWorld()->SpawnActor<AProjectile>(
 		ProjectileClass,
 		Location,
-		Rotation);
+		Rotation); // Spawn actor AProjectile with the Projectile class, at the location & rotation of ProjectileSpawnPoint
 
-	Projectile->SetOwner(this);
+	Projectile->SetOwner(this); // Setting the projectile owner to the pawn firing
 }
 

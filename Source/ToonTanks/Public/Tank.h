@@ -23,6 +23,10 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Movement")
 		float TurnRate = 100.f;
 
+	void HandleDestruction() override;
+
+	APlayerController* GetTankPlayerController() const { return TankPlayerController; };
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -44,7 +48,7 @@ private:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Enhanced Input", meta = (AllowPrivateAccess = "true"))
 		class UInputAction* InputFire;
 
-	APlayerController* PlayerControllerRef;
+	APlayerController* TankPlayerController;
 
 
 protected:

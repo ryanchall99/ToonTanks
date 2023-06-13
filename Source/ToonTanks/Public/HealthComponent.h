@@ -28,6 +28,7 @@ private:
 	UFUNCTION()
 		void DamageTaken(AActor* DamagedActor, float Damage, const UDamageType* DamageType, AController* Instigator, AActor* DamageCauser); // Actor Damaged / Damage Amount / Damage Type / Controller Instigating Damage / Actor Causing Damage
 
+	class AToonTanksGameMode* ToonTanksGameMode;
 public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
