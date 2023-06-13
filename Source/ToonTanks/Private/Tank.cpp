@@ -57,7 +57,9 @@ void ATank::Tick(float DeltaTime)
 void ATank::HandleDestruction()
 {
     Super::HandleDestruction();
-    Destroy();
+
+    SetActorHiddenInGame(true); // Hides the tank (Maintains Camera)
+    SetActorTickEnabled(false); // Stops the tanks ticking
 }
 
 // Called to bind functionality to input

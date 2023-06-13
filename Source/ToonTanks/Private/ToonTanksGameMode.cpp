@@ -22,6 +22,7 @@ void AToonTanksGameMode::ActorDied(AActor* DeadActor)
             Tank->DisableInput(Tank->GetTankPlayerController()); // Disable any inputs into the player controller.
             Tank->GetTankPlayerController()->bShowMouseCursor = false;
         }
+
         Tank->HandleDestruction(); // Handle the tanks destruction.
     }
     else if (ATower* DestroyedTower = Cast<ATower>(DeadActor)) // Else if the destroyed actor can be seccessfully cast to ATower class...
