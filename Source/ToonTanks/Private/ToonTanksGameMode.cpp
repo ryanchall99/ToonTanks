@@ -11,8 +11,7 @@ void AToonTanksGameMode::BeginPlay()
 {
     Super::BeginPlay();
 
-    Tank = Cast<ATank>(UGameplayStatics::GetPlayerPawn(this, 0)); // Setting tank to the player pawn (Tank Pawn)
-    ToonTanksPlayerController = Cast<AToonTanksPlayerController>(UGameplayStatics::GetPlayerController(this, 0)); // Setting the ToonTanksPlayerController
+    HandleGameStart(); // Handles All The Start Of Game Functionality
 }
 
 void AToonTanksGameMode::ActorDied(AActor* DeadActor)
@@ -29,5 +28,31 @@ void AToonTanksGameMode::ActorDied(AActor* DeadActor)
     else if (ATower* DestroyedTower = Cast<ATower>(DeadActor)) // Else if the destroyed actor can be seccessfully cast to ATower class...
     {
         DestroyedTower->HandleDestruction(); // Destroy the tower.
+    }
+}
+
+void AToonTanksGameMode::HandleGameStart()
+{
+    Tank = Cast<ATank>(UGameplayStatics::GetPlayerPawn(this, 0)); // Setting tank to the player pawn (Tank Pawn)
+    ToonTanksPlayerController = Cast<AToonTanksPlayerController>(UGameplayStatics::GetPlayerController(this, 0)); // Setting the ToonTanksPlayerController
+
+    if (ToonTanksPlayerController)
+    {
+        ToonTanksPlayerController->SetPlayerEnabledState(false); // Sets player input to false on start.
+
+        FTimerHandle PlayerEnableTimerHandle; // Timer Handle For Enabling Input
+        FTimerDelegate PlayerEnableTimerDelegate = FTimerDelegate::CreateUObject(
+            ToonTanksPlayerController,
+            &AToonTanksPlayerController::SetPlayerEnabledState,
+            true
+        ); // Timer Delegate That Runs SetPlayerEnabledState Function With True Passed In After Elapsed Time
+
+        GetWorldTimerManager().SetTimer(
+            PlayerEnableTimerHandle,
+            PlayerEnableTimerDelegate,
+            StartDelay,
+            false
+        ); // Setting Timer, Runs The Delegate After Delay (Does Not Loop)
+
     }
 }
