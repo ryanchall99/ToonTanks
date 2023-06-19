@@ -23,6 +23,9 @@ protected:
 	UFUNCTION(BlueprintImplementableEvent) // Implemented In BluePrints
 		void StartGame(); // Function For When Game Starts
 
+	UFUNCTION(BlueprintImplementableEvent) // Implemented In BluePrints
+		void GameOver(bool bWonGame); // Function For When Game Ends (false = loss, true = win)
+
 
 private:
 	class ATank* Tank;
@@ -31,5 +34,7 @@ private:
 	void HandleGameStart();
 	float StartDelay = 4.f;
 
+	int32 TargetTowers = 0; // Amount of towers in game
+	int32 GetTargetTowerCount(); // Getter for amount of towers
 
 };
