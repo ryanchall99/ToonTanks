@@ -32,6 +32,10 @@ void ABasePawn::HandleDestruction()
 {
 	// TODO: 
 	// Visual / Sound Effects
+	if (DeathParticles)
+	{
+		UGameplayStatics::SpawnEmitterAtLocation(this, DeathParticles, GetActorLocation(), GetActorRotation()); // Spawns Particle System & Cleans it up
+	}
 }
 
 // Called when the game starts or when spawned
