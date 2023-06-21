@@ -60,6 +60,7 @@ void ATank::HandleDestruction()
 
     SetActorHiddenInGame(true); // Hides the tank (Maintains Camera)
     SetActorTickEnabled(false); // Stops the tanks ticking
+    bAlive = false; // Tank is not alive
 }
 
 // Called to bind functionality to input
