@@ -43,6 +43,8 @@ private:
 	UPROPERTY(EditAnywhere, Category = "Combat")
 		class UParticleSystem* DeathParticles;
 
+	UPROPERTY(EditAnywhere, Category = "Combat")
+		class USoundBase* DeathSound;
 
 public:
 	// Called every frame
